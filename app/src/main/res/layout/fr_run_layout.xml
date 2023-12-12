@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="333dp"
+            android:layout_height="111dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:contentDescription="@string/sun_icon"
+            app:srcCompat="@drawable/funny_sun"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/textViewTitleStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:fontFamily="@font/black_han_sans"
+            android:gravity="center"
+            android:text="@string/start_running"
+            android:textSize="34sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="#F4F4F4"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/time"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="#F3F3F3"
+                android:gravity="center"
+                android:text="@string/distance"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="#6DF5F5F5"
+                android:gravity="center"
+                android:text="@string/_00_00"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewDistance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="#46F4F4F4"
+                android:gravity="center"
+                android:text="@string/_0_00km"
+                android:textSize="18sp" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="@dimen/button_320dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center"
+            android:text="@string/start"
+            tools:ignore="VisualLintButtonSize" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

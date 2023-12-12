@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_standard">32dp</dimen>
+    <dimen name="EditText_90dp">90dp</dimen>
+    <dimen name="button_320dp">320dp</dimen>
+</resources>

@@ -1,0 +1,42 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitleHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:fontFamily="@font/black_han_sans"
+            android:text="@string/running_history"
+            android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="@dimen/button_320dp"
+            android:layout_height="82dp"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:layout_gravity="center"
+            android:text="@string/add_manually" />
+
+        <ListView
+            android:id="@+id/listViewRuns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/progress"
+        android:icon="@drawable/dashboard_icon"
+        android:title="Progress"
+        android:visible="true" />
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/history"
+        android:title="History"
+        android:visible="true" />
+    <item
+        android:id="@+id/run"
+        android:icon="@drawable/run_menu_icon"
+        android:title="Run"
+        android:visible="true" />
+    <item
+        android:id="@+id/gallery"
+        android:icon="@drawable/goal"
+        android:title="Months"
+        android:visible="true" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        android:title="Settings"
+        android:visible="true" />
+</menu>

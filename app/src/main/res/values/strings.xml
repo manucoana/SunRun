@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">SunRun</string>
+    <string name="add_a_run_manually">Add a run manually</string>
+    <string name="mm_dd_yyyy">yyyy-mm-dd</string>
+    <string name="distance">Distance: </string>
+    <string name="time">Time: </string>
+    <string name="add_run">Add run</string>
+    <string name="run_details">Run Details</string>
+    <string name="monthly_goal">Monthly Goal:</string>
+    <string name="distance_covered">Distance Covered: </string>
+    <string name="my_progress">My progress</string>
+    <string name="fun_run_with">Fun run with</string>
+    <string name="sunrun">SunRun</string>
+    <string name="start_running">Start Running</string>
+    <string name="running_history">Running history</string>
+    <string name="sun_icon">sun_icon</string>
+    <string name="_00_00">00:00</string>
+    <string name="_0_00km">0.00km</string>
+    <string name="start">START</string>
+    <string name="settings">Settings</string>
+    <string name="enter_your_goal_for_this_month">Enter your goal for this month</string>
+    <string name="enter_month_e_g_january">Enter month (e.g., January)</string>
+    <string name="set_goal_for_this_month">SET GOAL FOR THIS MONTH</string>
+    <string name="date">Date:</string>
+    <string name="minutes">Minutes:</string>
+    <string name="add_manually">Add manually</string>
+    <string name="my_monthly_goals">My monthly goals</string>
+    <string name="x_km">[X] km</string>
+    <string name="out_of">out of</string>
+    <string name="x_km_goal">[X] km goal</string>
+    <string name="run_icon">run_icon</string>
+    <string-array name="months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+</resources>

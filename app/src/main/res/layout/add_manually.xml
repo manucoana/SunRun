@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/black_han_sans"
+            android:text="@string/add_a_run_manually"
+            android:textSize="34sp" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="@dimen/button_320dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints="@string/mm_dd_yyyy"
+            android:digits="0123456789-"
+            android:hint="@string/mm_dd_yyyy"
+            android:inputType="date"
+            android:textColorHint="#8D6E63" />
+
+
+        <EditText
+            android:id="@+id/editTextDistance"
+            android:layout_width="@dimen/button_320dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/distance"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="@dimen/button_320dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints=""
+            android:hint="@string/time"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/buttonAddRun"
+            android:layout_width="@dimen/button_320dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center"
+            android:text="@string/add_run" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
