@@ -1,18 +1,14 @@
 package com.example.sunrun.database.goals;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import androidx.annotation.NonNull;
 
-import java.io.Serializable;
+public class GoalEntry {
+    private final String id;
 
-public class GoalEntry  {
-    private String id;
+    private final int monthNumber;
 
-    private int monthNumber;
-
-    private String monthName;
-    private float goal;
+    private final String monthName;
+    private final float goal;
 
     public GoalEntry(String id, int monthNumber, String monthName, float goal) {
         this.id = id;
@@ -25,9 +21,6 @@ public class GoalEntry  {
         return id;
     }
 
-    public int getMonthNumber() {
-        return monthNumber;
-    }
 
     public String getMonthName() {
         return monthName;
@@ -37,6 +30,7 @@ public class GoalEntry  {
         return goal;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "GoalEntry{" +
