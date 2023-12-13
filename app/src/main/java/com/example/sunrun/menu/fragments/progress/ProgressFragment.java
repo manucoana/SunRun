@@ -1,4 +1,4 @@
-package com.example.sunrun.menu.fragments;
+package com.example.sunrun.menu.fragments.progress;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.sunrun.R;
-
-import com.example.sunrun.menu.manager.DateManager;
-import com.example.sunrun.menu.manager.ProgressManager;
 
 public class ProgressFragment extends Fragment {
 

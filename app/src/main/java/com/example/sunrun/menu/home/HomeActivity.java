@@ -9,11 +9,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.sunrun.R;
-import com.example.sunrun.menu.fragments.ProgressFragment;
-import com.example.sunrun.menu.fragments.HistoryFragment;
-import com.example.sunrun.menu.fragments.ProbaGoalFragment;
-import com.example.sunrun.menu.fragments.RunFragment;
-import com.example.sunrun.menu.fragments.SettingsFragment;
+import com.example.sunrun.menu.fragments.progress.ProgressFragment;
+import com.example.sunrun.menu.fragments.history.HistoryFragment;
+import com.example.sunrun.menu.fragments.months.MonthsFragment;
+import com.example.sunrun.menu.fragments.run.RunFragment;
+import com.example.sunrun.menu.fragments.settings.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
                 replaceFragment(new SettingsFragment());
                 return true;
             } else if (itemId == R.id.gallery) {
-                replaceFragment(new ProbaGoalFragment());
+                replaceFragment(new MonthsFragment());
                 return true;
             }
             return false;

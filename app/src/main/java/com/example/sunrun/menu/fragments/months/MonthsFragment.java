@@ -1,4 +1,4 @@
-package com.example.sunrun.menu.fragments;
+package com.example.sunrun.menu.fragments.months;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,9 +18,9 @@ import com.example.sunrun.database.goals.GoalEntry;
 
 import java.util.List;
 
-public class ProbaGoalFragment extends Fragment {
+public class MonthsFragment extends Fragment {
 
-    public ProbaGoalFragment() {
+    public MonthsFragment() {
     }
 
     @Nullable
@@ -30,9 +30,11 @@ public class ProbaGoalFragment extends Fragment {
 
         ListView listView = view.findViewById(R.id.listViewGoals);
 
-        DatabaseRuns databaseRuns = new DatabaseRuns(getContext());
+        List<GoalEntry> goalEntries;
+        try (DatabaseRuns databaseRuns = new DatabaseRuns(getContext())) {
 
-        List<GoalEntry> goalEntries = databaseRuns.getAllGoals();
+            goalEntries = databaseRuns.getAllGoals();
+        }
 
         GoalAdapter goalAdapter = new GoalAdapter(getContext(), R.layout.single_goal_details_layout, goalEntries);
 

@@ -1,4 +1,4 @@
-package com.example.sunrun.menu.manager;
+package com.example.sunrun.menu.fragments.progress;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

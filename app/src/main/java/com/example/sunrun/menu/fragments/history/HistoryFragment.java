@@ -1,4 +1,4 @@
-package com.example.sunrun.menu.fragments;
+package com.example.sunrun.menu.fragments.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +18,7 @@ import com.example.sunrun.database.create.DatabaseRuns;
 
 import com.example.sunrun.database.runs.RunAdapter;
 import com.example.sunrun.database.runs.RunEntry;
+import com.example.sunrun.menu.fragments.manually.AddManuallyFragment;
 
 import java.util.List;
 
@@ -33,9 +34,11 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_history_layout, container, false);
         ListView listView = view.findViewById(R.id.listViewRuns);
 
-        DatabaseRuns databaseRuns = new DatabaseRuns(getContext());
+        List<RunEntry> runEntries;
+        try (DatabaseRuns databaseRuns = new DatabaseRuns(getContext())) {
 
-        List<RunEntry> runEntries = databaseRuns.getAllRuns();
+            runEntries = databaseRuns.getAllRuns();
+        }
 
         RunAdapter runAdapter = new RunAdapter(getContext(), R.layout.single_run_details_layout, runEntries);
 

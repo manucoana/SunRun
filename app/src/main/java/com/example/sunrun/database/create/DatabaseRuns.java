@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-
 import androidx.annotation.Nullable;
 
 import com.example.sunrun.database.goals.GoalEntry;
@@ -129,9 +127,6 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
         cursor.close();
         db.close();
 
-        for (RunEntry run : runEntries) {
-            Log.d("RunEntry", "ID: " + run.getId() + ", Date: " + run.getDate() + ", Distance in km: " + run.getDistance() + "Time in minutes: " + run.getTime());
-        }
         return runEntries;
     }
 
@@ -206,13 +201,11 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
         );
 
         if (cursor != null && cursor.moveToFirst()) {
-            // Update the existing goal
             String id = cursor.getString(cursor.getColumnIndexOrThrow(GOAL_COLUMN_ID));
             values.put(GOAL_COLUMN_GOAL, goal);
 
             db.update(GOALS_TABLE, values, GOAL_COLUMN_ID + " = ?", new String[]{id});
         } else {
-            // Insert a new goal if it doesn't exist
             values.put(GOAL_COLUMN_GOAL, goal);
             db.insert(GOALS_TABLE, null, values);
         }

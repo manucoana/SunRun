@@ -1,4 +1,4 @@
-package com.example.sunrun.menu.fragments;
+package com.example.sunrun.menu.fragments.manually;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -27,7 +27,6 @@ public class AddManuallyFragment extends Fragment {
     private EditText editTextDate;
     private EditText editTextDistance;
     private EditText editTextTime;
-
     private DatabaseRuns databaseRuns;
 
     @Nullable
@@ -89,11 +88,9 @@ public class AddManuallyFragment extends Fragment {
 
 
     private boolean validateDateFormat(String inputDate) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        sdf.setLenient(false);
-
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         try {
-            Date date = sdf.parse(inputDate);
+            Date date = simpleDateFormat.parse(inputDate);
             return date != null;
         } catch (ParseException e) {
             return false;
