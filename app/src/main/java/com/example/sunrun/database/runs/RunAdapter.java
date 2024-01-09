@@ -27,7 +27,6 @@ public class RunAdapter extends ArrayAdapter<RunEntry> {
         this.runEntries = runEntries;
     }
 
-    @SuppressLint("SetTextI18n")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

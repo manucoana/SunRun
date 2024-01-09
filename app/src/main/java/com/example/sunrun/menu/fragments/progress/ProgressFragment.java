@@ -28,7 +28,6 @@ public class ProgressFragment extends Fragment {
         TextView sumGoal=view.findViewById(R.id.SumGoal);
 
         dateTextView.setText(DateManager.getCurrentDate());
-        //textViewRunTime.setText();
 
         return view;
     }

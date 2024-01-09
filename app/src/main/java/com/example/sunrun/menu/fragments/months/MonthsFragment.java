@@ -26,7 +26,7 @@ public class MonthsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fr_months, container, false); // Use goals_layout.xml
+        View view = inflater.inflate(R.layout.fr_months, container, false);
 
         ListView listView = view.findViewById(R.id.listViewGoals);
 
