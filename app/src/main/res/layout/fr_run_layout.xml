@@ -107,7 +107,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/margin_standard"
             android:text="@string/finish"
-            app:rippleColor="#B65858"
             tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>

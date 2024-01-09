@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="progress_background_color">#C0C0C0</color>
-    <color name="progress_color">#00FF00</color>
-    <color name="runner_blue">#000000</color>
+    <color name="progress_color">#4AB4E6</color>
+    <color name="runner_blue">#1976D1</color>
+    <color name="button_start">#4DCFE0</color>
+    <color name="button_finish">#000000</color>
 </resources>
