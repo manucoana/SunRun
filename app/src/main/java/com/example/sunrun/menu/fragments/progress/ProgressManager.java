@@ -11,6 +11,11 @@ public class ProgressManager {
     private double monthlyGoal;
     private int lastUpdatedMonth;
 
+    public ProgressManager(ProgressBar progressBar, DatabaseRuns databaseRuns, double monthlyGoal) {
+        this.progressBar = progressBar;
+        this.databaseRuns = databaseRuns;
+        this.monthlyGoal = monthlyGoal;
+    }
 
 
 }

@@ -5,7 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
+
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.example.sunrun.database.goals.GoalEntry;
 import com.example.sunrun.database.runs.RunEntry;
@@ -23,6 +26,10 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
     private static final String MY_RUNS = "my_run";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_DATE = "date";
+
+    private static final String COLUMN_DAY = "day";
+    private static final String COLUMN_MONTH = "month";
+    private static final String COLUMN_YEAR = "year";
     private static final String COLUMN_DISTANCE = "distance";
 
     private static final String COLUMN_TIME = "time";
@@ -86,6 +93,7 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public List<RunEntry> getAllRuns() {
         List<RunEntry> runEntries = new ArrayList<>();
@@ -112,11 +120,8 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
         while (cursor.moveToNext()) {
             String id = String.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_ID)));
             String dateString = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DATE));
-            LocalDate date = null;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                date = LocalDate.parse(dateString, formatter);
-            }
+            LocalDate date = parseDate(dateString);
+
             String distance = String.valueOf(cursor.getFloat(cursor.getColumnIndexOrThrow(COLUMN_DISTANCE)));
             String time = String.valueOf(cursor.getFloat(cursor.getColumnIndexOrThrow(COLUMN_TIME)));
 
@@ -171,6 +176,7 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
         return goalEntries;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void insertRun(String date, float distance, float time) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -178,6 +184,11 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
         values.put(COLUMN_DATE, date);
         values.put(COLUMN_DISTANCE, distance);
         values.put(COLUMN_TIME, time);
+
+        LocalDate localDate = parseDate(date);
+        values.put(COLUMN_DAY, localDate.getDayOfMonth());
+        values.put(COLUMN_MONTH, localDate.getMonthValue());
+        values.put(COLUMN_YEAR, localDate.getYear());
 
         db.insert(MY_RUNS, null, values);
         db.close();
@@ -223,6 +234,12 @@ public class DatabaseRuns extends SQLiteOpenHelper implements IDatabaseRuns {
                 "July", "August", "September", "October", "November", "December"
         };
         return monthNames[monthNumber - 1];
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private LocalDate parseDate(String dateString) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return LocalDate.parse(dateString, formatter);
     }
 
 }

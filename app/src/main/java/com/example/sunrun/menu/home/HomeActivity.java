@@ -1,13 +1,16 @@
 package com.example.sunrun.menu.home;
 
 
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.sunrun.R;
 import com.example.sunrun.menu.fragments.progress.ProgressFragment;
 import com.example.sunrun.menu.fragments.history.HistoryFragment;
@@ -17,6 +20,7 @@ import com.example.sunrun.menu.fragments.settings.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +62,8 @@ public class HomeActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
     }
+
+
 }
+
 

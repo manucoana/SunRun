@@ -17,8 +17,6 @@ public class ProgressFragment extends Fragment {
     private ProgressManager progressManager;
 
     public ProgressFragment() {
-
-
     }
 
     @Override
@@ -26,8 +24,11 @@ public class ProgressFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_progress_layout, container, false);
 
         TextView dateTextView = view.findViewById(R.id.date);
+        TextView sumKm = view.findViewById(R.id.SumKm);
+        TextView sumGoal=view.findViewById(R.id.SumGoal);
 
         dateTextView.setText(DateManager.getCurrentDate());
+        //textViewRunTime.setText();
 
         return view;
     }
